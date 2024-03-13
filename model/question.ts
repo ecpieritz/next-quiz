@@ -1,10 +1,12 @@
+import AnswerModel from "./answer"
+
 export default class QuestionModel {
   #id: number
   #statement: string
-  #answers: any[]
+  #answers: AnswerModel[]
   #correct: boolean
 
-  constructor(id:number, statement:string, answers:any[],correct = false){
+  constructor(id:number, statement:string, answers:AnswerModel[],correct = false){
     this.#id = id
     this.#statement = statement
     this.#answers = answers
@@ -28,7 +30,9 @@ export default class QuestionModel {
   }
 
   get answered(){
-    //FIXME: implementar esse método
+    for(let answer of this.#answers) {
+      if(answer.revealed) return true
+    }
     return false
   }
 }

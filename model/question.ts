@@ -35,4 +35,13 @@ export default class QuestionModel {
     }
     return false
   }
+
+  convertToObject(){
+    return {
+      id: this.#id,
+      statement: this.#statement,
+      answers: this.#answers.map(anw => anw.convertToObject()),
+      correct: this.#correct,
+    }
+  }
 }

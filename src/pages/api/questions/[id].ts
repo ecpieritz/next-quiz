@@ -7,7 +7,7 @@ export default function handler(req, res) {
   const unicQuestionOrNothing = questions.filter(question => question.id === selectedId)
 
   if(unicQuestionOrNothing.length === 1) {
-    const selectedQuestion = unicQuestionOrNothing[0]
+    const selectedQuestion = unicQuestionOrNothing[0].shuffleAnswers()
     res.status(200).json(selectedQuestion.convertToObject())
   } else {
     res.status(204).send()

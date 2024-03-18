@@ -14,13 +14,17 @@
   --blue-dark: #0c65b5;
 }
 
+html,
 body {
+  padding: 0;
+  margin: 0;
   background: rgb(146, 8, 214);
   background: var(--gradient);
+  color: var(--white);
 }
 
 *{
-  color: var(--white);
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 

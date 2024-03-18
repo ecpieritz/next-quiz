@@ -1,3 +1,8 @@
 .question {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 20px;
 }

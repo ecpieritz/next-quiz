@@ -1,7 +1,9 @@
 .statement{
   display: flex;
+  margin-bottom: 15px;
 }
 
 .text {
   color: var(--black);
+  font-weight: 400;
 }

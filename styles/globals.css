@@ -58,8 +58,6 @@ p{
   line-height: 1.25;
 }
 
-.socials{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.p-2{
+  padding: 8px;
 }

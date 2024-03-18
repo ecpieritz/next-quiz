@@ -8,7 +8,8 @@ export default function handler(req, res) {
 
   if(unicQuestionOrNothing.length === 1) {
     const selectedQuestion = unicQuestionOrNothing[0].shuffleAnswers()
-    res.status(200).json(selectedQuestion.convertToObject())
+    const obj = selectedQuestion.answerWith(0).convertToObject()
+    res.status(200).json(obj)
   } else {
     res.status(204).send()
   }

@@ -57,3 +57,9 @@ p{
   font-weight: 400;
   line-height: 1.25;
 }
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

@@ -1,33 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --gradient: linear-gradient(157deg, rgba(146, 8, 214, 1) 40%, rgba(0, 134, 255, 1) 100%);
+  --black: black;
+  --white: white;
+  --purple: #9208d6;
+  --purple-dark: #660c93;
+  --blue: #0086ff;
+  --blue-dark: #0c65b5;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(146, 8, 214);
+  background: var(--gradient);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+*{
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+}
+
+h1{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h2{
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h3{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h4{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
 }

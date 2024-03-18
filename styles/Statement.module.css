@@ -1,0 +1,7 @@
+.statement{
+  display: flex;
+}
+
+.text {
+  color: var(--black);
+}

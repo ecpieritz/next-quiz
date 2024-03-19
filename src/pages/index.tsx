@@ -16,7 +16,6 @@ export default function Home() {
   const [question, setQuestion] = useState(questionMock)
 
   function onResponse(index: number) {
-    console.log(index)
     setQuestion(question.answerWith(index))
   }
 
@@ -32,7 +31,7 @@ export default function Home() {
       </Head>
       <Header />
       <main
-        className={`flex min-h-screen flex-col items-center p-24`}
+        className={`flex flex-col items-center p-24`}
       >
         <Question value={question} onResponse={onResponse} />
       </main>

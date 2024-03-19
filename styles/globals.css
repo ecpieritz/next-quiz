@@ -23,6 +23,7 @@ body {
   background: rgb(146, 8, 214);
   background: var(--gradient);
   color: var(--white);
+  height: 100%;
 }
 
 *{

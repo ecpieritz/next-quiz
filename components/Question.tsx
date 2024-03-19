@@ -14,10 +14,11 @@ export default function Question(props: QuestionProps) {
     return question.answers.map((answer, i) => {
       return (
         <Answer 
+          key={i}
           value={answer}
           index={i}
           letter="a"
-          letterCollor="red"
+          letterBgCollor="red"
         />
       )
     })

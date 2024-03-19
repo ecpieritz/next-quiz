@@ -39,7 +39,12 @@ export default function Home() {
       <main
         className={`flex flex-col items-center p-24`}
       >
-        <Question value={question} onResponse={onResponse} timeOut={timeOut} />
+        <Question
+          // timeToAnswer={5}
+          value={question}
+          onResponse={onResponse}
+          timeOut={timeOut}
+        />
       </main>
     </>
   );

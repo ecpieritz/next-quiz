@@ -14,6 +14,7 @@ const letters = [
 
 interface QuestionProps {
   value: QuestionModel
+  timeToAnswer?: number
   onResponse: (index: number) => void
   timeOut: () => void
 }
@@ -39,7 +40,10 @@ export default function Question(props: QuestionProps) {
   return (
     <section className={styles.question}>
       <Statement text={question.statement} />
-      <Timer duration={10} timeOut={props.timeOut} />
+      <Timer 
+        duration={props.timeToAnswer ?? 10}
+        timeOut={props.timeOut}
+      />
       {AnswersRender()}
     </section>
   );

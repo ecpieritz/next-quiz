@@ -8,27 +8,33 @@
   width: 400px;
 }
 
-.front{
+.front,
+.back {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.front{
   border-radius: 16px;
-  background-color: var(--blue);
+  align-items: center;
+  background-color: var(--blue-light);
 }
 
-.front p{
+.optionP{
   padding: 15px 0;
+  font-weight: 500;
 }
 
-.front h4{
+.optionH4{
   padding: 15px 30px;
 }
 
 .letter{
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
+  text-transform: uppercase;
 }
 
 @media(max-width: 460px){

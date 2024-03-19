@@ -18,10 +18,10 @@ export default function Answer(props: AnswerProps) {
           <div className={styles.letter}
             style={{backgroundColor: props.letterBgCollor}}
           >
-            <h4>{props.letter}</h4>
+            <h4 className={styles.optionH4}>{props.letter}</h4>
           </div>
           <div className={styles.value}>
-            <p>{answer.value}</p>
+            <p className={styles.optionP}>{answer.value}</p>
           </div>
         </div>
 

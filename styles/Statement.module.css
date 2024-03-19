@@ -1,6 +1,7 @@
 .statement{
   display: flex;
   margin-bottom: 15px;
+  align-self: baseline;
 }
 
 .text {

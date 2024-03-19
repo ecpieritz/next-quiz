@@ -18,6 +18,12 @@ export default function Home() {
   function onResponse(index: number) {
     setQuestion(question.answerWith(index))
   }
+  
+  function timeOut() {
+    if(question.notAnswered){
+      setQuestion(question.answerWith(-1))
+    }
+  }
 
   return (
     <>
@@ -33,7 +39,7 @@ export default function Home() {
       <main
         className={`flex flex-col items-center p-24`}
       >
-        <Question value={question} onResponse={onResponse} />
+        <Question value={question} onResponse={onResponse} timeOut={timeOut} />
       </main>
     </>
   );

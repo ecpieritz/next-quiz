@@ -1,0 +1,6 @@
+.timer{
+  display: flex;
+  margin-bottom: 20px;
+  color: var(--black);
+  font-size: 36px;
+}

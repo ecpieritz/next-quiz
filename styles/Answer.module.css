@@ -23,7 +23,7 @@
 .front{
   border-radius: 16px;
   align-items: center;
-  background-color: var(--blue-light);
+  background-color: var(--gray);
 }
 
 .optionP{

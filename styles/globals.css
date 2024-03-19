@@ -6,8 +6,9 @@
 
 :root {
   --gradient: linear-gradient(157deg, rgba(146, 8, 214, 1) 40%, rgba(0, 134, 255, 1) 100%);
-  --black: black;
-  --white: white;
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #bdbdbd;
   --purple: #9208d6;
   --purple-dark: #660c93;
   --blue: #0086ff;

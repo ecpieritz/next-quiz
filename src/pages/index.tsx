@@ -3,15 +3,22 @@ import QuestionModel from "../../model/question";
 import AnswerModel from "../../model/answer";
 import Header from "../../components/Header";
 import Head from "next/head";
+import { useState } from "react";
+
+const questionMock = new QuestionModel(1, 'Melhor cor?', [
+  AnswerModel.incorrect('Preto'),
+  AnswerModel.incorrect('Rosa'),
+  AnswerModel.incorrect('Azul'),
+  AnswerModel.correct('Roxo'),
+])
 
 export default function Home() {
-  const questionTest = new QuestionModel(1, 'Melhor cor?', [
-    AnswerModel.incorrect('Preto'),
-    AnswerModel.incorrect('Rosa'),
-    AnswerModel.incorrect('Azul'),
-    AnswerModel.correct('Roxo'),
-  ])
+  const [question, setQuestion] = useState(questionMock)
 
+  function onResponse(index: number) {
+    console.log(index)
+    setQuestion(question.answerWith(index))
+  }
 
   return (
     <>
@@ -27,7 +34,7 @@ export default function Home() {
       <main
         className={`flex min-h-screen flex-col items-center p-24`}
       >
-        <Question value={questionTest} />
+        <Question value={question} onResponse={onResponse} />
       </main>
     </>
   );

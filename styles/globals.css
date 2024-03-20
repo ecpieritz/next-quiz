@@ -22,15 +22,15 @@ body {
   margin: 0;
   background: rgb(146, 8, 214);
   background: var(--gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--white);
-  height: 100%;
 }
 
 *{
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
 h1{
   font-size: 56px;
   font-weight: 700;
@@ -63,4 +63,8 @@ p{
 
 .p-2{
   padding: 8px;
+}
+
+footer {
+  text-align: center;
 }

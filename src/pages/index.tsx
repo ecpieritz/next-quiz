@@ -4,6 +4,7 @@ import AnswerModel from "../../model/answer";
 import Header from "../../components/Header";
 import Head from "next/head";
 import { useState } from "react";
+import Footer from "../../components/Footer";
 
 const questionMock = new QuestionModel(1, 'Melhor cor?', [
   AnswerModel.incorrect('Preto'),
@@ -37,7 +38,7 @@ export default function Home() {
       </Head>
       <Header />
       <main
-        className={`flex flex-col items-center p-24`}
+        className={`flex flex-col items-center p-12`}
       >
         <Question
           // timeToAnswer={5}
@@ -46,6 +47,7 @@ export default function Home() {
           timeOut={timeOut}
         />
       </main>
+      <Footer />
     </>
   );
 }

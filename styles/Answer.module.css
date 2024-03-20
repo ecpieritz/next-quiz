@@ -61,7 +61,11 @@
   text-transform: uppercase;
 }
 
-@media(max-width: 460px){
+@media(max-width: 470px){
+  .answer{
+    width: 100%;
+  }
+
   .contentAnswer{
     width: 100%;
   }

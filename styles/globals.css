@@ -22,9 +22,10 @@ body {
   margin: 0;
   background: rgb(146, 8, 214);
   background: var(--gradient);
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   color: var(--white);
+  height:auto;
 }
 
 *{
@@ -66,5 +67,14 @@ p{
 }
 
 footer {
+  width: 100%;
+  bottom: 0;
   text-align: center;
+
+}
+
+@media(max-width: 470px){
+  .p-12{
+    padding: 15px !important;
+  }
 }

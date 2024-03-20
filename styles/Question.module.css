@@ -7,3 +7,9 @@
   padding: 30px;
   border-radius: 20px;
 }
+
+@media(max-width: 470px){
+  .question{
+    width: 100%;
+  }
+}

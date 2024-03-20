@@ -73,8 +73,22 @@ footer {
 
 }
 
+.bg-white{
+  background-color: var(--white);
+  width: fit-content;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
 @media(max-width: 470px){
   .p-12{
     padding: 15px !important;
+  }
+
+  .bg-white{
+    width: 100%;
+    padding: 25px 15px;
   }
 }

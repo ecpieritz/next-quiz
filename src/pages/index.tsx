@@ -20,9 +20,9 @@ export default function Home() {
   function onResponse(index: number) {
     setQuestion(question.answerWith(index))
   }
-
+  
   function timeOut() {
-    if (question.notAnswered) {
+    if(question.notAnswered){
       setQuestion(question.answerWith(-1))
     }
   }
@@ -41,13 +41,15 @@ export default function Home() {
       <main
         className={`flex flex-col items-center p-12`}
       >
-        <Question
-          // timeToAnswer={5}
-          value={question}
-          onResponse={onResponse}
-          timeOut={timeOut}
-        />
-        <Button text="Próxima" />
+        <div className="bg-white">
+          <Question
+            // timeToAnswer={5}
+            value={question}
+            onResponse={onResponse}
+            timeOut={timeOut}
+          />
+          <Button text="Próxima" />
+        </div>
       </main>
       <Footer />
     </>

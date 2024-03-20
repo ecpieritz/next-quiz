@@ -2,6 +2,7 @@ import Question from "../../components/Question";
 import QuestionModel from "../../model/question";
 import AnswerModel from "../../model/answer";
 import Header from "../../components/Header";
+import Button from "../../components/Button";
 import Head from "next/head";
 import { useState } from "react";
 import Footer from "../../components/Footer";
@@ -19,9 +20,9 @@ export default function Home() {
   function onResponse(index: number) {
     setQuestion(question.answerWith(index))
   }
-  
+
   function timeOut() {
-    if(question.notAnswered){
+    if (question.notAnswered) {
       setQuestion(question.answerWith(-1))
     }
   }
@@ -46,6 +47,7 @@ export default function Home() {
           onResponse={onResponse}
           timeOut={timeOut}
         />
+        <Button text="Próxima" />
       </main>
       <Footer />
     </>

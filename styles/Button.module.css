@@ -1,0 +1,15 @@
+.button{
+  background-color: var(--purple);
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  
+}
+
+.button:hover{
+  background-color: var(--purple-dark);
+}

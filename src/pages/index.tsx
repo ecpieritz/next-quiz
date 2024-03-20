@@ -39,7 +39,7 @@ export default function Home() {
       </Head>
       <Header />
       <main
-        className={`flex flex-col items-center p-12`}
+        className={`flex flex-col items-center`}
       >
         <div className="bg-white">
           <Question

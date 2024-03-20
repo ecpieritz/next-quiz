@@ -1,0 +1,24 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 20px;
+  max-width: 1240px;
+  margin: auto;
+}
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer p{
+  margin: 0;
+}

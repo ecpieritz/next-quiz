@@ -2,7 +2,7 @@ import QuestionModel from "../../model/question";
 import AnswerModel from "../../model/answer";
 import Header from "../../components/Header";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Quiz from "../../components/Quiz";
 
@@ -13,8 +13,31 @@ const questionMock = new QuestionModel(1, 'Melhor cor?', [
   AnswerModel.correct('Roxo'),
 ])
 
+const BASE_URL = 'http://localhost:3000/api'
+
 export default function Home() {
-  const [question, setQuestion] = useState(questionMock)
+  const [questionsIds, setQuestionsIds] = useState<number[]>([])
+  const [question, setQuestion] = useState<QuestionModel>(questionMock)
+
+  async function loadQuestionsIds(){
+    const awr = await fetch(`${BASE_URL}/quiz`)
+    const questionsIds = await awr.json()
+    setQuestionsIds(questionsIds)
+  }
+  
+  async function loadQuestion(questionId: number){
+    const awr = await fetch(`${BASE_URL}/questions/${questionId}`)
+    const json = await awr.json()
+    console.log(json)
+  }
+
+  useEffect(() => {
+    loadQuestionsIds()
+  }, [])
+  
+  useEffect(() => {
+    questionsIds.length > 0 && loadQuestion(questionsIds[0])
+  }, [questionsIds])
 
   function answeredQuestion(question: QuestionModel){
 

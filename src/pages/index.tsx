@@ -47,8 +47,13 @@ export default function Home() {
     setCorrectAnswers(correctAnswers + (correct ? 1 : 0))
   }
 
-  function goToNextStep(){
+  function nextQuestionId(){
+    const nextIndex = questionsIds.indexOf(question.id) + 1
+    return questionsIds[nextIndex]
+  }
 
+  function goToNextStep(){
+const nextId = nextQuestionId
   }
 
   return (

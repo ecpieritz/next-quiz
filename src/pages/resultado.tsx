@@ -1,11 +1,52 @@
 import { useRouter } from 'next/router';
-import styles from '../../styles/Results.module.css'
+import styles from '../../styles/Results.module.css';
 import Head from "next/head";
 import Link from 'next/link';
 
+interface RouterQuery {
+  corrects: string | string[] | undefined;
+  total: string | string[] | undefined;
+}
+
 export default function Resultado() {
   const router = useRouter();
-  const { corrects, total } = router.query;
+  const { corrects, total }: RouterQuery = router.query;
+
+  const correctsNumber: number = parseInt(corrects as string);
+
+  function getCorrectsDiv(correctsNumber: number): JSX.Element {
+    if (correctsNumber <= 10) {
+      return (
+        <div className="low">
+          <p>Há muito o que aprender!</p>
+          <p>Seu conhecimento é <strong>baixo</strong>!</p>
+        </div>
+      );
+    } else if (correctsNumber <= 20) {
+      return (
+        <div className="medium">
+          <p>Você já conhece alguma coisa sobre kpop.</p>
+          <p>Seu conhecimento é <strong>médio</strong>!</p>
+        </div>
+      );
+    } else if (correctsNumber <= 30) {
+      return (
+        <div className="high">
+          <p>Muito bom! Com certeza conhece bastante sobre kpop.</p>
+          <p>Seu conhecimento é <strong>alto</strong>!</p>
+        </div>
+      );
+    } else if (correctsNumber <= 40) {
+      return (
+        <div className="expert">
+          <p>WOW! Você já deve curtir kpop há muito tempo!</p>
+          <p>Seu conhecimento é <strong>expert</strong>!</p>
+        </div>
+      );
+    } else {
+      return <></>;
+    }
+  }
 
   return (
     <>
@@ -17,12 +58,13 @@ export default function Resultado() {
         <title>Kpop Quiz | Resultado</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <section className={styles.results} style={{height: '100vh'}}>
+      <section className={styles.results} style={{ height: '100vh' }}>
         <h1>Resultado</h1>
 
         <div className={styles.textDiv}>
-
-          <p>Acertou <span>{corrects}</span> de <span>{total}</span> perguntas.</p>
+          <h4>Acertou <span>{corrects}</span> de <span>{total}</span> perguntas.</h4>
+          
+          {getCorrectsDiv(correctsNumber)}
 
           <Link href='/'><button className={styles.newQuiz}>Iniciar novo quiz</button></Link>
         </div>

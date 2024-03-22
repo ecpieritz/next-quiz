@@ -22,13 +22,19 @@
   text-align: center;
 }
 
-.textDiv p{
+.textDiv h4{
   font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 40px;
 }
 
-.textDiv p span{
+.textDiv h4 span{
   font-size: 36px;
   font-weight: 700;
+}
+
+.textDiv p{
+  line-height: 1.5;
 }
 
 .newQuiz{

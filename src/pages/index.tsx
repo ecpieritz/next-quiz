@@ -40,8 +40,8 @@ export default function Home() {
     questionsIds.length > 0 && loadQuestion(questionsIds[0])
   }, [questionsIds])
 
-  function answeredQuestion(question: QuestionModel){
-
+  function answeredQuestion(answeredQuestion: QuestionModel){
+    setQuestion(answeredQuestion)
   }
 
   function goToNextStep(){

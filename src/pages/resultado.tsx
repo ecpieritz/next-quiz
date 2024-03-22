@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/Results.module.css';
 import Head from "next/head";
 import Link from 'next/link';
+import Footer from '../../components/Footer';
 
 interface RouterQuery {
   corrects: string | string[] | undefined;
@@ -69,6 +70,9 @@ export default function Resultado() {
           <Link href='/'><button className={styles.newQuiz}>Iniciar novo quiz</button></Link>
         </div>
       </section>
+      <div className="absolute">
+          <Footer />
+        </div>
     </>
   );
 }

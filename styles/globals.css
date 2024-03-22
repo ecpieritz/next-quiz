@@ -25,13 +25,18 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   color: var(--white);
-  height:auto;
+  height: max-content;
 }
 
 *{
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
+main.flex{
+  overflow-y: hidden !important;
+}
+
 h1{
   font-size: 56px;
   font-weight: 700;
@@ -70,7 +75,9 @@ footer {
   width: 100%;
   bottom: 0;
   text-align: center;
-
+}
+.home-footer{
+  margin-top: -170px;
 }
 
 .bg-white{
@@ -82,6 +89,28 @@ footer {
   margin: 0 20px 20px;
 }
 
+.bg-white.home{
+  margin-top: 40px;
+  color: var(--black);
+  text-align: center;
+}
+
+.bg-white.home button{
+  margin-top: 40px;
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 20px 40px;
+  border-radius: 16px;
+}
+
+.bg-white.home button:hover{
+  background-color: var(--purple-dark);
+}
+
+.absolute{
+  position: absolute;
+  bottom: 0;
+}
 @media(max-width: 470px){
   .p-12{
     padding: 15px !important;

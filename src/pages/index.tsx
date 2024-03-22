@@ -53,7 +53,16 @@ export default function Home() {
   }
 
   function goToNextStep(){
-const nextId = nextQuestionId
+    const nextId = nextQuestionId()
+    nextId ? goToNextQuestion(nextId) : finish()
+  }
+
+  function goToNextQuestion(nextId: number) {
+    loadQuestion(nextId)
+  }
+
+  function finish() {
+
   }
 
   return (
@@ -73,7 +82,7 @@ const nextId = nextQuestionId
         <div className="bg-white">
           <Quiz
             question={question}
-            lastQuestion={true}
+            lastQuestion={nextQuestionId() === undefined}
             answeredQuestion={answeredQuestion}
             goToNextStep={goToNextStep}
           />

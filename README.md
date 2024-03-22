@@ -2,9 +2,9 @@
 
 ## 🖥 Preview
 <p align = "center">
-  <img src = "x" width = "700" height = "auto">
-  <img src = "x" width = "350" height = "auto">
-  <img src = "x" width = "350" height = "auto">
+  <img src = "https://raw.githubusercontent.com/ecpieritz/next-quiz/158afc79afeae5fded6bdc1644a07f6457123dde/public/imgs/print-01.png" width = "700" height = "auto">
+  <img src = "https://raw.githubusercontent.com/ecpieritz/next-quiz/158afc79afeae5fded6bdc1644a07f6457123dde/public/imgs/print-02.png" width = "350" height = "auto">
+  <img src = "https://raw.githubusercontent.com/ecpieritz/next-quiz/158afc79afeae5fded6bdc1644a07f6457123dde/public/imgs/print-03.png" width = "350" height = "auto">
 </p>
 
 ## 📖 About

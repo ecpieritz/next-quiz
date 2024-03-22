@@ -8,7 +8,7 @@
 </p>
 
 ## 📖 About
-<p>Quiz app. The quiz consists of 16 questions and at the end you will know how many questions you got right and the percentage of correct answers. Made with Next.js.</p>
+<p>Quiz app. The quiz consists of 40 questions and at the end you will know how many questions you got right and the percentage of correct answers. Made with Next.js.</p>
 
 ---
 

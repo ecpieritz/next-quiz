@@ -84,12 +84,14 @@ export default function Home() {
         className={`flex flex-col items-center`}
       >
         <div className="bg-white">
-          <Quiz
-            question={question}
-            lastQuestion={nextQuestionId() === undefined}
-            answeredQuestion={answeredQuestion}
-            goToNextStep={goToNextStep}
-          />
+          {question ? (
+            <Quiz
+              question={question}
+              lastQuestion={nextQuestionId() === undefined}
+              answeredQuestion={answeredQuestion}
+              goToNextStep={goToNextStep}
+            />
+          ): false}
         </div>
       </main>
       <Footer />

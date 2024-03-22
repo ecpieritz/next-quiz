@@ -1,23 +1,17 @@
 import QuestionModel from "../../model/question";
-import AnswerModel from "../../model/answer";
 import Header from "../../components/Header";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Quiz from "../../components/Quiz";
-
-const questionMock = new QuestionModel(1, 'Melhor cor?', [
-  AnswerModel.incorrect('Preto'),
-  AnswerModel.incorrect('Rosa'),
-  AnswerModel.incorrect('Azul'),
-  AnswerModel.correct('Roxo'),
-])
+import { useRouter } from "next/router";
 
 const BASE_URL = 'http://localhost:3000/api'
 
 export default function Home() {
+  const router = useRouter()
   const [questionsIds, setQuestionsIds] = useState<number[]>([])
-  const [question, setQuestion] = useState<QuestionModel>(questionMock)
+  const [question, setQuestion] = useState<QuestionModel>()
   const [correctAnswers, setCorrectAnswers] = useState<number>(0)
 
   async function loadQuestionsIds(){
@@ -48,13 +42,17 @@ export default function Home() {
   }
 
   function nextQuestionId(){
-    const nextIndex = questionsIds.indexOf(question.id) + 1
-    return questionsIds[nextIndex]
+    if(question){
+      const nextIndex = questionsIds.indexOf(question?.id) + 1
+      return questionsIds[nextIndex]
+    }
   }
 
   function goToNextStep(){
-    const nextId = nextQuestionId()
-    nextId ? goToNextQuestion(nextId) : finish()
+    if(question){
+      const nextId = nextQuestionId()
+      nextId ? goToNextQuestion(nextId) : finish()
+    }
   }
 
   function goToNextQuestion(nextId: number) {
@@ -62,7 +60,13 @@ export default function Home() {
   }
 
   function finish() {
-
+    router.push({
+      pathname: '/resultado',
+      query: {
+        total: questionsIds.length,
+        corrects: correctAnswers
+      }
+    })
   }
 
   return (
